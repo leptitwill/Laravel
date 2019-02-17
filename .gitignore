@@ -6,6 +6,7 @@ yarn-error.log
 # Public
 /public/hot
 /public/css
+/public/js
 /public/storage
 
 # Storage
@@ -16,6 +17,7 @@ yarn-error.log
 
 # Environments
 .env
+mix-manifest.json
 
 # Unit tests
 .phpunit.result.cache
