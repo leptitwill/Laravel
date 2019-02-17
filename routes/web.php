@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Redirige vers la page des films
+Route::redirect('/', 'film');
 
-Route::get('/1', function () {
-    return 'fff';
-});
+// Films
+Route::resource('film', 'FilmController');
