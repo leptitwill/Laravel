@@ -1,11 +1,26 @@
+# Node and Yarn
 /node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# Public
+/public/hot
+/public/css
+/public/storage
+
+# Storage
+/storage/*.key
+
+# Vendors
+/vendor
+
+# Environments
+.env
+
+# Unit tests
+.phpunit.result.cache
+
+# Homestead
+Homestead.json
+Homestead.yaml
+
