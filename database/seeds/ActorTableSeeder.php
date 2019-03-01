@@ -14,6 +14,6 @@ class ActorTableSeeder extends Seeder
         // Vide la table
         DB::table('actor')->delete();
         // Ajoute les acteurs
-        factory(App\Actor::class, 50)->create();
+        factory(App\Actor::class, 30)->create();
     }
 }

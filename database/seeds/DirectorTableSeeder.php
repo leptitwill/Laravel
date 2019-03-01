@@ -14,6 +14,6 @@ class DirectorTableSeeder extends Seeder
         // Vide la table
         DB::table('director')->delete();
         // Ajoute les directeurs
-        factory(App\Director::class, 20)->create();
+        factory(App\Director::class, 10)->create();
     }
 }

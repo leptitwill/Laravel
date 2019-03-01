@@ -7,7 +7,7 @@ $factory->define(App\MovieCast::class, function (Faker $faker) {
     static $i_id = 1;
     // Donnée à génerer
     return [
-        'movie_id' => rand(1, 20),
+        'movie_id' => rand(1, 10),
         'actor_id' => $i_id++,
         'role'     => $faker->jobTitle()
     ];

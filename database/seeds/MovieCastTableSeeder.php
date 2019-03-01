@@ -16,6 +16,6 @@ class MovieCastTableSeeder extends Seeder
         // Vide la table
         DB::table('movie_cast')->delete();
         // Associe des acteurs à un film
-        factory(App\MovieCast::class, 50)->create();
+        factory(App\MovieCast::class, 30)->create();
     }
 }

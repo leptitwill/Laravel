@@ -16,6 +16,6 @@ class MovieDirectionTableSeeder extends Seeder
         // Vide la table
         DB::table('movie_direction')->delete();
         // Associe un directeur à un film
-        factory(App\MovieDirection::class, 20)->create();
+        factory(App\MovieDirection::class, 10)->create();
     }
 }

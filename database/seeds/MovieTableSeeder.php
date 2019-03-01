@@ -14,6 +14,6 @@ class MovieTableSeeder extends Seeder
         // Vide la table
         DB::table('movie')->delete();
         // Ajoute les films
-        factory(App\Movie::class, 20)->create();
+        factory(App\Movie::class, 10)->create();
     }
 }

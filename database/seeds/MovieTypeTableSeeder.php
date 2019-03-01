@@ -16,6 +16,6 @@ class MovieTypeTableSeeder extends Seeder
         // Vide la table
         DB::table('movie_type')->delete();
         // Associe les films à un type
-        factory(App\MovieType::class, 20)->create();
+        factory(App\MovieType::class, 10)->create();
     }
 }
