@@ -15,4 +15,4 @@
 Route::redirect('/', 'film');
 
 // Films
-Route::resource('film', 'FilmController');
+Route::resource('film', 'MovieController');

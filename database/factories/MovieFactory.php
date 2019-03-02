@@ -7,14 +7,14 @@ use Illuminate\Support\Arr;
 $factory->define(App\Movie::class, function (Faker $faker) {
     // Liste des films
     static $a_movies = [
-        'Forrest Gump',
-        'La Ligne verte',
-        'Le Parrain',
+        'Baby Driver',
+        'Apocalypse Now',
+        'The Thing',
         'Django Unchained',
-        'The Dark Knight, Le Chevalier Noir',
-        'Gran Torino',
+        'John Wick 2',
+        'Kill Bill',
         'Pulp Fiction',
-        'Les Evadés',
+        'The dark knight',
         'Le Roi Lion',
         'Fight Club'
     ];

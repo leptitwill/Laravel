@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movie;
+use App\Movie;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -14,7 +14,13 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        // Récupère la liste des films
+        $a_movies = Movie::with('type', 'director', 'actor')->get();
+        // Affiche la liste
+        return view('movie.list', [
+            'title'  => 'Liste des films',
+            'movies' => $a_movies
+        ]);
     }
 
     /**
@@ -46,7 +52,8 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        //
+        var_dump($movie);
+        return $movie;
     }
 
     /**
