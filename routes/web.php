@@ -12,7 +12,7 @@
 */
 
 // Redirige vers la page des films
-Route::redirect('/', 'film');
+Route::redirect('/', 'movie');
 
 // Films
-Route::resource('film', 'MovieController');
+Route::resource('movie', 'MovieController');
