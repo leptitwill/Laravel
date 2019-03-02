@@ -1,0 +1,21 @@
+.movie__title {
+    font-size: 1.5rem;
+    font-weight: bold; 
+    margin-bottom: 0.5rem;
+}
+
+.movie__type {
+    background: $gradient;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+    font-size: 0.8rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.movie__picture {
+    width: 150px;
+    img {
+        width: 100%;
+    }
+}

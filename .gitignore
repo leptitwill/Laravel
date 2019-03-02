@@ -8,6 +8,8 @@ yarn-error.log
 /public/css
 /public/js
 /public/storage
+/public/fonts
+/public/img
 
 # Storage
 /storage/*.key

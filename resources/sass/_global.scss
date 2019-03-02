@@ -1,0 +1,5 @@
+main {
+    padding: 3rem 0;
+    max-height: calc(100vh - (#{$header-size} + #{$footer-size}));
+    overflow-y: auto;
+}
