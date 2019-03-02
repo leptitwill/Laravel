@@ -1,10 +1,10 @@
-.movie__title {
+.movie_list__title {
     font-size: 1.5rem;
     font-weight: bold; 
     margin-bottom: 0.5rem;
 }
 
-.movie__type {
+.movie_list__type {
     background: $gradient;
     padding: 0.25rem 0.5rem;
     display: inline-block;
@@ -13,9 +13,24 @@
     margin-bottom: 1rem;
 }
 
-.movie__picture {
+.movie_list__picture {
     width: 150px;
     img {
         width: 100%;
     }
+}
+
+.movie__picture {
+    height: calc(100vh - (#{$header-size} + #{$footer-size} + 6rem));
+    max-width: max-content !important;
+    img {
+        height: 100%;
+    }
+}
+
+.movie__description {
+    border-left: 4px solid $secondary;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
 }

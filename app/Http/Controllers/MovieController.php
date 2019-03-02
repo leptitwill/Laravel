@@ -52,8 +52,11 @@ class MovieController extends Controller
      */
     public function show(Movie $movie)
     {
-        var_dump($movie);
-        return $movie;
+        // Affiche le film
+        return view('movie.show', [
+            'title' => $movie->movie_title,
+            'movie' => $movie
+        ]);
     }
 
     /**
@@ -64,7 +67,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        var_dump($movie);
     }
 
     /**

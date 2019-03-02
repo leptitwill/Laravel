@@ -10,12 +10,18 @@
     <body>
         <header class="navbar">
             <div class="navbar__logo">
+                <a href="{{ url('/') }}">
                     <i class="fab fa-youtube"></i> Movie
+                </a>
             </div>
             <nav>
                 <ul class="nav">
-                    <li class="nav-item">Menu 1</li>
-                    <li class="nav-item">Menu 2</li>
+                    <li class="nav-item">
+                        <a href="{{ url('movie') }}" class="{{ Request::is('movie') ? 'active' : '' }}">
+                            Liste des films
+                        </a>
+                    </li>
+                    <li class="nav-item">Ajouter un film</li>
                 </ul>
             </nav>
         </header>

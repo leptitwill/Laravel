@@ -3,6 +3,17 @@ header {
     color: white;
     padding: 1rem 2rem !important;
 }
-.navbar__logo {
+.navbar__logo a {
     font-size: 1.5rem;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.nav-item a {
+    color: white !important;
+    padding: 1rem;
+
+    &.active {
+        text-decoration: underline;
+    }
 }
