@@ -1,0 +1,46 @@
+label {
+    display: block;
+}
+
+input, select {
+    height: $input-size !important;
+    padding: 0 1rem !important;
+    box-shadow: none !important;
+}
+
+textarea {
+    height: 150px;
+}
+
+input, textarea, select {
+    display: block;
+    width: 100%;
+    border: 1px solid $grey !important;
+    border-radius: 0 !important;
+}
+
+.custom-file-label {
+    border-radius: 0 !important;
+    height: $input-size !important;
+    line-height: $input-size !important;
+    padding: 0 1rem !important;
+    &::after {
+        height: $input-size !important;
+        line-height: $input-size !important;
+        padding: 0 1rem !important;
+        background: $gradient;
+        color:white !important;
+        border-radius: 0 !important;
+        top: -1px !important;
+        right: -1px;
+    }
+}
+
+button {
+    float: right;
+    background: $gradient;
+    color: white;
+    border: 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}

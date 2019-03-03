@@ -11,11 +11,17 @@
 // Layouts
 @import 'layouts/header';
 
+// Components
+@import 'components/form';
+
 // Pages
 @import 'pages/movie';
 
-
 // Dépendances
+$custom-file-text: (
+  en: "Browse",
+  fr: "Choisir"
+);
 @import '~bootstrap/scss/bootstrap';
 
 // Fontawesome

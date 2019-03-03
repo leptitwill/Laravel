@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col movie__picture">
-            <img src="{{ asset('img/'.snake_case($movie->movie_title).'.jpg') }}" alt="{{ snake_case($movie->movie_title) }}">
+            <img src="{{ asset('storage/'.snake_case($movie->movie_title).'.jpg') }}" alt="{{ snake_case($movie->movie_title) }}">
         </div>
         <div class="col movie__info">
             <h1>{{ $movie->movie_title }}</h1>
