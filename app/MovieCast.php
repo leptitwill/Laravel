@@ -14,4 +14,6 @@ class MovieCast extends Model
     public $incrementing = false;
     // Indique si les colonnes "created_at" et "updated_at" existe
     public $timestamps = false;
+    // Liste des colonne de masse
+    protected $fillable = ['actor_id', 'movie_id', 'role'];
 }
