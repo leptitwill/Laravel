@@ -1,0 +1,19 @@
+button, .button {
+    float: right;
+    background: $gradient;
+    color: white !important;
+    text-decoration: none !important;
+    border: 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.button--input_action {
+    padding: 1rem;
+    color: $primary;
+    cursor: pointer;
+    &:hover {
+        color: $secondary;
+    }
+}

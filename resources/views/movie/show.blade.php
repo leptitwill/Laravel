@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col movie__picture">
-            <img src="{{ asset('storage/'.snake_case($movie->movie_title).'.jpg') }}" alt="{{ snake_case($movie->movie_title) }}">
+            <img src="{{ asset('storage/'.$movie->movie_id.'.jpg') }}" alt="{{ snake_case($movie->movie_title) }}">
         </div>
         <div class="col movie__info">
             <h1>{{ $movie->movie_title }}</h1>
@@ -23,6 +23,10 @@
                 @endforeach
             </p>
             <p class="movie__description">{{ $movie->movie_description }}</p>
+            <div class="movie__action">
+                <a class="button" href="{{ url('movie/'.$movie->movie_id.'/edit') }}">Modifier le film</a>
+                <button id="movie__delete" data-movie_id="{{ $movie->movie_id }}">Supprimer le film</a>
+            </div>
         </div>
     </div>
 @endsection

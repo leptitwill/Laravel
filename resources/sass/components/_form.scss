@@ -10,6 +10,7 @@ input, select {
 
 textarea {
     height: 150px;
+    padding: 1rem;
 }
 
 input, textarea, select {
@@ -34,13 +35,4 @@ input, textarea, select {
         top: -1px !important;
         right: -1px;
     }
-}
-
-button {
-    float: right;
-    background: $gradient;
-    color: white;
-    border: 0;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
 }

@@ -37,3 +37,25 @@ bsCustomFileInput = require('bs-custom-file-input');
 $(document).ready(function () {
     bsCustomFileInput.init()
 })
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+/**
+ * Au clique sur le bouton pour supprimer un film
+ */
+$(document).on('click', '#movie__delete', function(e){
+    // Annule l'évenement de base
+    e.preventDefault();
+    // Fait l'appel AJAX pour le supprimer
+    $.ajax({
+        'url': '/~leptitwill/Laravel/public/movie/'+$(this).data('movie_id'),
+        'type': 'DELETE',
+        'success': function(result){
+            window.location.replace('/~leptitwill/Laravel/public/movie');
+        }
+    })
+})
