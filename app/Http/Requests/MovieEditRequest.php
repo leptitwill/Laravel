@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class MovieRequest extends FormRequest
+class MovieEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +25,8 @@ class MovieRequest extends FormRequest
     public function rules()
     {
         return [
-            'picture'            => 'required|image',
-            'title'              => 'required|unique:movie,movie_title|max:50',
+            'picture'            => 'image',
+            'title'              => 'required|max:50',  Rule::unique('movie')->ignore($this->movie->movie_id, 'movie_id'),
             'time'               => 'required|integer',
             'year'               => 'required|integer',
             'type'               => 'required',

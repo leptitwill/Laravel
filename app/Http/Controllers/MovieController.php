@@ -7,6 +7,7 @@ use App\Type;
 use App\Director;
 use App\Actor;
 use App\Http\Requests\MovieRequest;
+use App\Http\Requests\MovieEditRequest;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -110,19 +111,63 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        var_dump($movie);
+        // Récupère les types de film
+        $a_types = Type::get();
+        // Affiche le formulaire d'édition
+        return view('movie.create', [
+            'title' => 'Modifier '.$movie->movie_title,
+            'movie' => $movie,
+            'types' => $a_types
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\MovieEditRequest  $request
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(MovieEditRequest $request, Movie $movie)
     {
-        //
+        // Modifie le film
+        $movie->movie_title       = $request->title;
+        $movie->movie_year        = $request->year;
+        $movie->movie_time        = $request->time;
+        $movie->movie_description = $request->description;
+        $movie->save();
+        // Désassocie tous les directeurs du film
+        $movie->director()->detach();
+        // Si le directeur n'existe pas, l'ajoute et l'associe
+        $o_director = Director::firstOrCreate([
+            'director_lastname'  => $request->director_lastname,
+            'director_firstname' => $request->director_firstname
+        ]);
+        $movie->director()->attach($o_director->director_id);
+        // Désassocie tous les acteurs du film
+        $movie->actor()->detach();
+        // Si l'acteur n'existe pas, l'ajoute et l'associe
+        for ($i=0; $i < count($request->actor_gender); $i++) {
+            $o_actor = Actor::firstOrCreate([
+                'actor_lastname'  => $request->actor_lastname[$i],
+                'actor_firstname' => $request->actor_firstname[$i],
+                'actor_gender'    => $request->actor_gender[$i],
+                'actor_lastname'  => $request->actor_lastname[$i],
+            ]);
+            // Associe l'acteur
+            $movie->actor()->attach($o_actor->actor_id, ['role' => $request->actor_role[$i]]);
+        }
+        // Désassocie tous les type du film
+        $movie->type()->detach();
+        // Cherche et associe le type
+        $o_type = Type::find($request->type);
+        $movie->type()->attach($o_type->type_id);
+        // Upload l'image si il y'en a une
+        if(!is_null($request->picture)){
+            $request->picture->storeAs('public', $movie->movie_id.'.jpg');
+        }
+        // Redirige vers la liste des films
+        return redirect('movie/'.$movie->movie_id);
     }
 
     /**
@@ -133,6 +178,11 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        // Supprime le film
+        $movie->delete();
+    }
+
+    public function add_form_actor(){
+        return view('movie.create_actor', ['key' => 1]);
     }
 }

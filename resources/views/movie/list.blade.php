@@ -8,7 +8,7 @@
                 <tr>
                     <td class="movie_list__picture">
                         <a href="{{ url('movie/'.$movie->movie_id) }}">
-                            <img src="{{ asset('storage/'.snake_case($movie->movie_title).'.jpg') }}" alt="{{ snake_case($movie->movie_title) }}">
+                            <img src="{{ asset('storage/'.$movie->movie_id.'.jpg') }}" alt="{{ snake_case($movie->movie_title) }}">
                         </a>
                     </td>
                     <td class="movie_list__info">
