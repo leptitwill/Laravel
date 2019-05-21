@@ -8,6 +8,7 @@ use App\Director;
 use App\Actor;
 use App\Http\Requests\MovieRequest;
 use App\Http\Requests\MovieEditRequest;
+
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -83,7 +84,7 @@ class MovieController extends Controller
         $o_type = Type::find($request->type);
         $o_movie->type()->save($o_type);
         // Upload l'image
-        $request->picture->storeAs('public', snake_case($request->title).'.jpg');
+        $request->picture->storeAs('public', snake_case($o_movie->movie_id).'.jpg');
         // Redirige vers la liste des films
         return redirect('movie');
     }
